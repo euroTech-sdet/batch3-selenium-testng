@@ -10,12 +10,14 @@ public class Test {
 
 
         WebDriver driver = WebDriverFactory.getDriver("chrome");
-        driver.get("https://demoqa.com/automation-practice-form");
+        driver.get("https://demoqa.com/sortable");
         driver.manage().window().maximize();
+
+        driver.findElement(By.xpath("//*[@id=\"userName\"]"));
 
 
         Thread.sleep(3000);
-        driver.findElement(By.id("hobbies-checkbox-1")).click();
+        System.out.println("driver.= " + driver.findElement(By.xpath("//div[@class='list-group-item list-group-item-action']")).getText());
 
         Thread.sleep(2000);
 
