@@ -23,12 +23,22 @@ public class DisableElementsDemo {
 
       //  System.out.println(element.isEnabled());
 
-        Assert.assertFalse(element.isEnabled());
+        Assert.assertFalse(element.isEnabled(),"verify is disable");
         enableButton.click();
         Thread.sleep(6000);
+        Assert.assertTrue(element.isEnabled(),"verify is enable");
 
-        Assert.assertTrue(element.isEnabled());
+        System.out.println("false");
+
 
         driver.close();
+    }
+
+    @Test
+    public void test() {
+
+        System.out.println("False");
+
+
     }
 }
