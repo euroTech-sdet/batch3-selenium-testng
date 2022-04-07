@@ -3,6 +3,7 @@ package com.eurotech.day15TypeOfElements;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import utilities.WebDriverFactory;
 
@@ -37,9 +38,12 @@ public class RadioButtonDemo {
         WebElement element = driver.findElement(By.cssSelector("input[type='checkbox']:nth-of-type(1)"));
         System.out.println("element.isSelected() = " + element.isSelected());
 
-        WebElement element2 = driver.findElement(By.cssSelector("input[type='checkbox']:nth-of-type(2)"));
+        Assert.assertFalse(element.isSelected());
 
+        WebElement element2 = driver.findElement(By.cssSelector("input[type='checkbox']:nth-of-type(2)"));
         System.out.println("element2.isSelected() = " + element2.isSelected());
+
+        Assert.assertTrue(element2.isSelected());
 
 
         driver.close();
