@@ -1,5 +1,6 @@
 package com.eurotech.day14_TestNG;
 
+import org.testng.Assert;
 import org.testng.annotations.*;
 
 public class BeforeAfterClass {
@@ -37,6 +38,36 @@ public class BeforeAfterClass {
     public void test3() {
 
         System.out.println("IGNORE");
+    }
+
+    @Test
+    public void test4() {
+        String email ="rasgele@gmail.com";
+
+//        if(email.contains("@")){
+//            System.out.println("Pass");
+//        }else {
+//            System.out.println("Fail");
+//        }
+
+        Assert.assertTrue(email.contains("@")&email.contains(".com"),"verify email contains @");
+
+    }
+
+    @Test
+    public void test5() {
+
+        Assert.assertFalse(0>1,"verify that 0 1 den buyuk degildir");
+
+
+    }
+
+    @Test
+    public void test6() {
+
+        Assert.assertNotEquals("ali","ahmet","Ali ve ahmet isimleri ayni degildir");
+
+
     }
 
     @AfterClass
