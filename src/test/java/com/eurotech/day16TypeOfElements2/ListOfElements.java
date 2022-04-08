@@ -26,14 +26,24 @@ public class ListOfElements {
 
         driver.get("https://the-internet.herokuapp.com/");
         List<WebElement> menuList = driver.findElements(By.tagName("li"));
+
+        //FindElements methodu ile locator ederken mutlaka size ina bakmaliyiz.
+        //Locator hatali ise list element no such an element hatasi donmez.
+
+        System.out.println("menuList.size() = " + menuList.size());
         int expectedSize= 44;
         int actualSize=menuList.size();
         Assert.assertEquals(actualSize,expectedSize,"verify that size is 44");
 
+
         for (WebElement menu : menuList) {
             System.out.println(menu.getText());
-
         }
+
+        //menuList.get(43).click();
+        System.out.println("menuList.get(8).getText() = " + menuList.get(8).getText());
+
+
 
     }
 
