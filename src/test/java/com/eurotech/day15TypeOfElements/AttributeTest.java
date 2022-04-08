@@ -41,5 +41,8 @@ public class AttributeTest {
         System.out.println(userInput.getAttribute("id"));
         System.out.println(userInput.getAttribute("class"));
 
+        System.out.println(userInput.getAttribute("value"));
+
+
     }
 }

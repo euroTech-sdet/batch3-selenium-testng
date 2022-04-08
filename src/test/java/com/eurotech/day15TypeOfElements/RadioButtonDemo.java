@@ -45,7 +45,6 @@ public class RadioButtonDemo {
 
         Assert.assertTrue(element2.isSelected());
 
-
         driver.close();
     }
 }
