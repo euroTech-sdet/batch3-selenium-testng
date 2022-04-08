@@ -35,6 +35,14 @@ public class NoSelectDropdown {
             System.out.println("webElement.getText() = " + webElement.getText());
         }
 
+        System.out.println(papaya.get(1).getText());
+        papaya.get(1).click();
+
+        System.out.println("papaya.get(4).isDisplayed() = " + papaya.get(4).isDisplayed());
+
+        List<WebElement> legumes = driver.findElements(By.xpath("(//*[text()='Tomato'])[3]/../../li"));
+        System.out.println("legumes.size() = " + legumes.size());
+
     }
 
     @AfterMethod
