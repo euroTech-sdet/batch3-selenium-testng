@@ -19,7 +19,7 @@ public class SelectDropDown {
 
     @BeforeMethod
     public void setUp() {
-        driver= WebDriverFactory.getDriver("chrome");
+        driver = WebDriverFactory.getDriver("chrome");
         driver.manage().window().maximize();
     }
 
@@ -44,29 +44,35 @@ public class SelectDropDown {
         //verify that default colour is Red
         String expectedOption = "Red";
         String actualOption = colour.getFirstSelectedOption().getText();
-      //  System.out.println("actualOption = " + actualOption);
-        Assert.assertEquals(actualOption,expectedOption,"verify that default colour is RED");
+        //  System.out.println("actualOption = " + actualOption);
+        Assert.assertEquals(actualOption, expectedOption, "verify that default colour is RED");
 
         //Select class i kullaranak elemente nasil tiklanir?
 
         //1 using visible text
         Thread.sleep(2000);
         colour.selectByVisibleText("Purple"); //purple a tiklayan line burasi
-        expectedOption="Purple";
-        actualOption=colour.getFirstSelectedOption().getText();
-        Assert.assertEquals(actualOption,expectedOption,"verify that default colour is Purple");
+
+        expectedOption = "Purple";
+        actualOption = colour.getFirstSelectedOption().getText();
+        Assert.assertEquals(actualOption, expectedOption, "verify that default colour is Purple");
 
         //2 select using index
         Thread.sleep(2000);
+
         colour.selectByIndex(1);
-        expectedOption="Blue";
-        actualOption=colour.getFirstSelectedOption().getText();
-        Assert.assertEquals(actualOption,expectedOption,"verify that default colour is Blue");
+        expectedOption = "Blue";
+        actualOption = colour.getFirstSelectedOption().getText();
+        Assert.assertEquals(actualOption, expectedOption, "verify that default colour is Blue");
 
-
-
+        //3 select by value
+        colour.selectByValue("8");
+        expectedOption = "Indigo";
+        actualOption = colour.getFirstSelectedOption().getText();
+        Assert.assertEquals(actualOption, expectedOption);
 
     }
+
     @AfterMethod
     public void tearDown() throws InterruptedException {
         Thread.sleep(2000);
