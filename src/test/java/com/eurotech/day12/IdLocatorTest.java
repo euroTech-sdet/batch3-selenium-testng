@@ -18,6 +18,8 @@ public class IdLocatorTest {
        // userName.sendKeys("Paul Mark");
         userName.sendKeys(faker.name().firstName());
 
+       
+
         Thread.sleep(2000);
 
         driver.close();

@@ -1,42 +1,27 @@
-package com.eurotech.day15TypeOfElements;
+package com.eurotech.day17;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import utilities.WebDriverFactory;
 
-public class CheckBoxDemo {
+public class IsSelected {
 
-    @Test
-    public void test1() throws InterruptedException {
+    WebDriver driver;
 
-            WebDriver driver= WebDriverFactory.getDriver("Chrome");
-            driver.get("https://the-internet.herokuapp.com/checkboxes");
-            driver.manage().window().maximize();
+    @BeforeMethod
+    public void setUp() {
+        driver = WebDriverFactory.getDriver("chrome");
 
-            Thread.sleep(2000);
-            WebElement element1= driver.findElement(By.xpath("(//input[@type='checkbox'])[1]"));
-            element1.click();
-            Thread.sleep(2000);
-            Assert.assertTrue(element1.isSelected());
-            WebElement element2= driver.findElement(By.xpath("(//input[@type='checkbox'])[2]"));
-            element2.click();
-            Thread.sleep(2000);
-            Assert.assertFalse(element2.isSelected());
-
-            //Go to this url
-        //click checkbox box 1
-        //verify that checkbox is selected
-        //click checkbox 2
-        // verify that checkbox 2 is unselected
 
     }
 
     @Test
-    public void testIsSelected() {
-
+    public void isSelected() {
         WebDriver driver= WebDriverFactory.getDriver("Chrome");
         driver.get("https://www.autohero.com/nl/search/?brand=bmw&MID=NL_SES_3000_11_11_502-700-2-0-0-0_693-0-0-0-0-0_2&nw=g&kw=bmw&mt=p&ap=&cr=590660503143&dv=c&pl=&loc=9102707&gclid=CjwKCAjwjZmTBhB4EiwAynRmD6N-fgXOWF0GhrSBzAAmrsqLjpUqAZ3ywshjg8zTBjY-5wLQFLeodhoCfOYQAvD_BwE");
 
@@ -49,8 +34,15 @@ public class CheckBoxDemo {
         Assert.assertFalse(handgesc.isSelected());
         handgesc.click();
         System.out.println(handgesc.getAttribute("class"));
+
         Assert.assertTrue(handgesc.getAttribute("class").contains("checked"));
 
+    }
 
+    @AfterMethod
+    public void tearDown() throws InterruptedException {
+
+        Thread.sleep(2000);
+        driver.close();
     }
 }

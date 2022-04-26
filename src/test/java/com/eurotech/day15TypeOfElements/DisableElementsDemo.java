@@ -34,11 +34,4 @@ public class DisableElementsDemo {
         driver.close();
     }
 
-    @Test
-    public void test() {
-
-        System.out.println("False");
-
-
-    }
 }
