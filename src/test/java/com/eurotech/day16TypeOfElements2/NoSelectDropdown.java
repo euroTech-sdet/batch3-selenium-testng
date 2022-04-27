@@ -31,6 +31,7 @@ public class NoSelectDropdown {
        List<WebElement> papaya = driver.findElements(By.xpath("(//ul[@class='o-mnits'])[10]/li"));
         System.out.println("papaya.size() = " + papaya.size());
 
+
         for (WebElement webElement : papaya) {
             System.out.println("webElement.getText() = " + webElement.getText());
         }

@@ -45,6 +45,8 @@ public class SelectTest {
         select.selectByVisibleText("Yellow"); //Yellow
         System.out.println("getFirst " + select.getFirstSelectedOption().getText());
 
+
+
         List<WebElement> colourList = select.getOptions();
         for (WebElement colour : colourList) {
             System.out.println("colour.getText() = " + colour.getText());

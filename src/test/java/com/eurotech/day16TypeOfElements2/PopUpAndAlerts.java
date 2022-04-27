@@ -45,6 +45,7 @@ public class PopUpAndAlerts {
         Alert alert = driver.switchTo().alert();
         alert.accept();
 
+
         driver.findElement(By.xpath("//*[text()='Click for JS Confirm']")).click();
 
         Thread.sleep(2000);
@@ -59,7 +60,6 @@ public class PopUpAndAlerts {
         //her bir js alert ti tikla ve asagida beliren yaziyin textini alip verify et.
         //expectedText = You successfully clicked an alert
         //actualText =
-
 
     }
 
