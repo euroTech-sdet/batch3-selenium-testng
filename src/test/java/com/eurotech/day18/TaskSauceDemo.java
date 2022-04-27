@@ -3,6 +3,7 @@ package com.eurotech.day18;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -69,7 +70,41 @@ public class TaskSauceDemo {
        String actualText= driver.findElement(By.cssSelector(".shopping_cart_link>span")).getText();
        Assert.assertEquals(actualText,"1");
 
+       driver.findElement(By.xpath("//*[text()='Remove']")).click();
+       driver.findElement(By.cssSelector(".shopping_cart_link")).click();
 
+       String  cartText = driver.findElement(By.cssSelector(".shopping_cart_link")).getText();
+       Assert.assertEquals(cartText,"");
+       
+
+    }
+
+    @Test
+    public void testCase4() {
+
+        driver.get("https://www.saucedemo.com/");
+        driver.findElement(By.id("user-name")).sendKeys("standard_user");
+        driver.findElement(By.id("password")).sendKeys("secret_sauce");
+        driver.findElement(By.id("login-button")).click();
+
+
+        WebElement orderMenu= driver.findElement(By.cssSelector(".product_sort_container"));
+        Select select = new Select(orderMenu);
+
+        String expectedResult = "Name (A to Z)";
+        String actualResult = select.getFirstSelectedOption().getText();
+
+        Assert.assertEquals(actualResult,expectedResult);
+
+        select.selectByValue("lohi");
+        String actualOrder= driver.findElement(By.cssSelector(".active_option")).getText();
+        System.out.println("actualOrder = " + actualOrder);
+        Assert.assertEquals(actualOrder,"PRICE (LOW TO HIGH)");
+
+    }
+
+    @Test
+    public void testCase5() {
 
     }
 
