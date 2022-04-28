@@ -16,13 +16,12 @@ public class IsSelected {
     @BeforeMethod
     public void setUp() {
         driver = WebDriverFactory.getDriver("chrome");
-
-
+        driver.manage().window().maximize();
     }
 
     @Test
     public void isSelected() {
-        WebDriver driver= WebDriverFactory.getDriver("Chrome");
+
         driver.get("https://www.autohero.com/nl/search/?brand=bmw&MID=NL_SES_3000_11_11_502-700-2-0-0-0_693-0-0-0-0-0_2&nw=g&kw=bmw&mt=p&ap=&cr=590660503143&dv=c&pl=&loc=9102707&gclid=CjwKCAjwjZmTBhB4EiwAynRmD6N-fgXOWF0GhrSBzAAmrsqLjpUqAZ3ywshjg8zTBjY-5wLQFLeodhoCfOYQAvD_BwE");
 
         driver.findElement(By.xpath("//button[@type='submit']")).click();
