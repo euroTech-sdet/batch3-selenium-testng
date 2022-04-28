@@ -75,7 +75,6 @@ public class TaskSauceDemo {
 
        String  cartText = driver.findElement(By.cssSelector(".shopping_cart_link")).getText();
        Assert.assertEquals(cartText,"");
-       
 
     }
 
@@ -130,6 +129,12 @@ public class TaskSauceDemo {
 
         Assert.assertTrue(actualPrice.contains(expectedPrice));
 
+        driver.findElement(By.xpath("//*[text()='Finish']")).click();
+
+        String expectedResult="THANK YOU FOR YOUR ORDER";
+        String actualResult=driver.findElement(By.tagName("h2")).getText();
+
+        Assert.assertEquals(actualResult,expectedResult);
 
     }
 
