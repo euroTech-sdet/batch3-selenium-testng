@@ -58,23 +58,31 @@ public class frames_iframes {
 
         driver.get("https://the-internet.herokuapp.com/nested_frames");
 
+        // Switch to frame-top
         driver.switchTo().frame("frame-top");
 
+        // Switch to frame-left
         driver.switchTo().frame("frame-left");
 
+        // get the text
         System.out.println("Text of Left Frame = " + driver.findElement(By.tagName("body")).getText());
 
+        // Switch to parent frame
         driver.switchTo().parentFrame();
 
+        // Switch to frame-middle using by index number
         driver.switchTo().frame(1);
 
+        // get the text
         System.out.println("Text of Middle Frame = " + driver.findElement(By.id("content")).getText());
 
         // Switch to main HTML directly
         driver.switchTo().defaultContent();
 
+        // Switch to Bottom frame
         driver.switchTo().frame("frame-bottom");
 
+        // get the text
         System.out.println("Text of Bottom Frame = " + driver.findElement(By.tagName("body")).getText());
 
 
