@@ -22,7 +22,7 @@ public class ImplicitlyWaitExample {
         driver.manage().window().maximize();
 
         // Aşağıdaki satır Selenium 4 versiyonu içindir.
-        //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
         // Aşağıdaki satır Selenium 3 versiyonu içindir.
         //driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
