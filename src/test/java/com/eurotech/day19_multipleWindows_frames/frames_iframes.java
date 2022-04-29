@@ -77,6 +77,9 @@ public class frames_iframes {
         System.out.println("Text of Middle Frame = " + driver.findElement(By.id("content")).getText());
 
         // Switch to main HTML directly
+//        driver.switchTo().parentFrame();
+//        driver.switchTo().parentFrame();
+
         driver.switchTo().defaultContent();
 
         // Switch to Bottom frame
