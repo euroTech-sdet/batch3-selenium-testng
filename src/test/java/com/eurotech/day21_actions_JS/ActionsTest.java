@@ -11,6 +11,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import utilities.WebDriverFactory;
 
+import javax.crypto.Cipher;
 import java.time.Duration;
 
 public class ActionsTest {
@@ -58,7 +59,6 @@ public class ActionsTest {
 
        Assert.assertEquals(actualText,expectedText);
 
-
     }
 
     @Test
@@ -71,7 +71,20 @@ public class ActionsTest {
         Actions actions = new Actions(driver);
 
         actions.moveToElement(source).clickAndHold().moveToElement(target).pause(4000).release().perform();
+    }
 
+    @Test
+    public void test() {
+
+        driver.findElement(By.xpath("jfhdj")).sendKeys("dencrypt.");
+        //Ankara123 --> sgdsghdfasghdr635463254762354
+        //selam -->  fdjgfhjdsgfjhdsgjdhgkdjshgkjdshgjkshgkjshgk
+        // Ankara123 encrypt (SecretKey"ERHAN") --> 345264yuayudiwyiuda
+        //Ankara123 encrypt (SecretKey"MACBOOK") --> mkfghjfghjf7874837483
+
+        //encrypt(password, secret key) --> 74364jfhjdfhkdjsjhfkjs
+
+        //
     }
 
     @AfterMethod
