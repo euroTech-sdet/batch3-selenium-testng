@@ -27,7 +27,7 @@ public class ExplicitWaitExample {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
         // Aşağıdaki satır Selenium 3 versiyonu içindir.
-        //driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+       // driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
 
     }
@@ -47,6 +47,10 @@ public class ExplicitWaitExample {
         driver.get("https://the-internet.herokuapp.com/dynamic_loading/2");
 
         driver.findElement(By.tagName("button")).click();
+
+        WebDriverWait wWait = new WebDriverWait(driver,Duration.ofSeconds(20));
+        wWait.until(ExpectedConditions.elementToBeClickable(By.id("//xpath")));
+        wWait.until(ExpectedConditions.elementToBeClickable(By.xpath("gjfhgjf")));
 
         WebElement helloText = new WebDriverWait(driver, Duration.ofSeconds(15))
                 .until(ExpectedConditions.elementToBeClickable(By.xpath("//h4[.='Hello World!']")));
