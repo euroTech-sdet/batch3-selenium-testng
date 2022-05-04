@@ -83,7 +83,7 @@ public class JavaScriptExecutorDemo {
 
         JavascriptExecutor jse = (JavascriptExecutor)driver;
         jse.executeScript("arguments[0].scrollIntoView(true);", linkTurkey);
-        jse.executeScript("arguments[0].click();", linkTurkey);
+      //  jse.executeScript("arguments[0].click();", linkTurkey);
 
     }
 
