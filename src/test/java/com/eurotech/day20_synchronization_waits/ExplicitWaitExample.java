@@ -48,9 +48,9 @@ public class ExplicitWaitExample {
 
         driver.findElement(By.tagName("button")).click();
 
-        WebDriverWait wWait = new WebDriverWait(driver,Duration.ofSeconds(20));
-        wWait.until(ExpectedConditions.elementToBeClickable(By.id("//xpath")));
-        wWait.until(ExpectedConditions.elementToBeClickable(By.xpath("gjfhgjf")));
+//        WebDriverWait wWait = new WebDriverWait(driver,Duration.ofSeconds(20));
+//        wWait.until(ExpectedConditions.elementToBeClickable(By.id("//xpath")));
+//        wWait.until(ExpectedConditions.elementToBeClickable(By.xpath("gjfhgjf")));
 
         WebElement helloText = new WebDriverWait(driver, Duration.ofSeconds(15))
                 .until(ExpectedConditions.elementToBeClickable(By.xpath("//h4[.='Hello World!']")));
