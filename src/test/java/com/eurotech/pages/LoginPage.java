@@ -9,30 +9,20 @@ import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage extends BasePage {
 
-//    @FindBy(id = "user-name")
-//    public WebElement usernameInput;
 
-    @FindBy(xpath = "//input[@data-test='username']")
-    public WebElement usernameInput;
 
-    @FindBy(id = "password")
+    @FindBy(name = "email")
+    public WebElement emailInput;
+
+    @FindBy(name = "password")
     public WebElement passwordInput;
 
-    @FindBy(css = ".submit-button.btn_action")
-    public WebElement loginButton;
+    @FindBy(xpath = "//input[@type='submit']")
+    public WebElement loginBtnLoginPage;
+
+    @FindBy(partialLinkText = "Forgot")
+    public WebElement forgotPassword;
 
 
-//    @FindAll({
-//            @FindBy(id = "login-buttonn"),
-//            @FindBy(name = "login-button"),
-//            @FindBy(xpath = "//input[@data-test='login-button']")
-//    })
-//    public WebElement loginButton;
-
-//    @FindBys({
-//            @FindBy(id = "login-button"),
-//            @FindBy(name = "login-button")
-//    })
-//    public WebElement loginButton;
 
 }
