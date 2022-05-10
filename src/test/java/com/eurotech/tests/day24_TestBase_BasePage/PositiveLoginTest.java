@@ -37,4 +37,22 @@ public class PositiveLoginTest extends TestBase{
 
     }
 
+   @Test
+   public void loginWithTeacher() {
+       LoginPage loginPage = new LoginPage();
+       loginPage.understandBtn.click();
+       loginPage.loginBtnBasePage.click();
+       DashboardPage dashboardPage = new DashboardPage();
+       loginPage.loginTeacher();
+       Assert.assertEquals(dashboardPage.welcomeMessage.getText(),"Welcome Eurotech");
+   }
+
+    @Test
+    public void login() {
+        LoginPage loginPage = new LoginPage();
+        loginPage.understandBtn.click();
+        loginPage.loginBtnBasePage.click();
+        loginPage.login(ConfigurationReader.get("usernameDeveloper"),ConfigurationReader.get("passwordDeveloper"));
+        loginPage.loginBtnLoginPage.click();
+    }
 }
