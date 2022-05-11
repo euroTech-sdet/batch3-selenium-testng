@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 public class NegativeLoginTest extends TestBase {
 
     @Test
-    public void negativeLoginTest() {
+    public void negativeLoginTest() throws InterruptedException {
 
         LoginPage loginPage = new LoginPage();
         DashboardPage dashboardPage= new DashboardPage();
