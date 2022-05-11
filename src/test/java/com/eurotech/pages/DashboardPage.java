@@ -22,6 +22,14 @@ public class DashboardPage extends BasePage{
     @FindBy(xpath = "//a[text()='Developers']")
     public WebElement developersMenu;
 
+    @FindBy(xpath = "//span[text()='My Account']")
+    public WebElement myAccountMenu;
+
+    @FindBy(xpath = "//span[text()='Logout']")
+    public WebElement logOutButton;
+
+
+
     @Test
     public void navigateToMenu(String menuName) {
 
@@ -29,36 +37,6 @@ public class DashboardPage extends BasePage{
 
         menu.click();
     }
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-//    @FindBy(className = "nav__menu-item")
-//    public List<WebElement> dashboardMenus;
-//
-//    @FindBy(xpath = "//li//*[text()='Developers']")
-//    public WebElement developersMenu;
-//
-//    @FindBy(xpath = "//li//*[text()='All Posts']")
-//    public WebElement allPostsMenu;
-//
-//    @FindBy(xpath = "//span[text()='My Account']")
-//    public WebElement myAccountMenu;
-//
-//    @FindBy(xpath = "//span[text()='Logout']")
-//    public WebElement logOutButton;
 
 
 

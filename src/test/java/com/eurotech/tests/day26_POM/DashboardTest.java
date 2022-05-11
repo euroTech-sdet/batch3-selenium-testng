@@ -69,13 +69,17 @@ public class DashboardTest extends TestBase {
          dashboardPage.navigateToMenu("All Posts");
         System.out.println("driver.getCurrentUrl() = " + driver.getCurrentUrl());
 
-//
 //        dashboardPage.developersMenu.click();
         dashboardPage.navigateToMenu("Developers");
         System.out.println("driver.getCurrentUrl() = " + driver.getCurrentUrl());
 
+        actions.moveToElement(dashboardPage.myAccountMenu).perform();
+        //dashboardPage.myAccountMenu.click();
 
-//        navigateToMenu("Developers");
+        dashboardPage.logOutButton.click();
+
+        System.out.println("After logging out = " + driver.getCurrentUrl());
+
 
     }
 }
