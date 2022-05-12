@@ -28,16 +28,4 @@ public class DashboardPage extends BasePage{
     @FindBy(xpath = "//span[text()='Logout']")
     public WebElement logOutButton;
 
-
-
-    @Test
-    public void navigateToMenu(String menuName) {
-
-        WebElement menu =   Driver.get().findElement(By.xpath("//a[text()='" + menuName + "']"));
-
-        menu.click();
-    }
-
-
-
 }

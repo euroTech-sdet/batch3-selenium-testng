@@ -1,25 +1,14 @@
-package com.eurotech.tests;
+package com.eurotech.tests.day27_ExtentReports;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.eurotech.utilities.ConfigurationReader;
-import com.eurotech.utilities.Driver;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 
-import java.time.Duration;
-
-public class TestBase {
-
-    protected WebDriver driver;
-    protected Actions actions;
-    protected WebDriverWait wait;
+public class ExtentReportTest {
 
     // This class is used to start and build reports
     ExtentReports report;
@@ -30,8 +19,8 @@ public class TestBase {
     // This class defines a test, enables adding logs, authors, test steps
     ExtentTest extentLogger;
 
-    @BeforeTest
-    public void setupTest() {
+    @BeforeMethod
+    public void  setup() {
 
         // Intialize the class
         report = new ExtentReports();
@@ -56,35 +45,32 @@ public class TestBase {
 
     }
 
-
-
-    @BeforeMethod
-    public void setUp() {
-
-        driver = Driver.get();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-        actions = new Actions(driver);
-        wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-
-        driver.get(ConfigurationReader.get("url"));
-
-    }
-
     @AfterMethod
-    public void tearDown() throws InterruptedException {
-
-        Thread.sleep(2500);
-        Driver.closeDriver();
-    }
-
-    @AfterTest
-    public void tearDownTest() {
+    public void tearDown() {
 
         // This is when the report is created
         report.flush();
-
     }
 
+    @Test
+    public void test1() {
 
+        // Give a name to the current test
+        extentLogger = report.createTest("TC001 Deneme Testi");
+
+        // Test Steps
+        extentLogger.info("Open Chrome Browser");
+
+        extentLogger.info("Go to eurotech.study");
+
+        extentLogger.info("Enter Teacher Credentials");
+
+        extentLogger.info("Click login button");
+
+        extentLogger.info("Verify logged in");
+
+
+        extentLogger.pass("TC001 is passed");
+
+    }
 }
