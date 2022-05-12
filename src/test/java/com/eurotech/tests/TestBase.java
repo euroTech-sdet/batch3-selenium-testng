@@ -22,13 +22,13 @@ public class TestBase {
     protected WebDriverWait wait;
 
     // This class is used to start and build reports
-    ExtentReports report;
+    protected ExtentReports report;
 
     // This class is used to create HTML report file
-    ExtentHtmlReporter htmlReporter;
+    protected ExtentHtmlReporter htmlReporter;
 
     // This class defines a test, enables adding logs, authors, test steps
-    ExtentTest extentLogger;
+    protected ExtentTest extentLogger;
 
     @BeforeTest
     public void setupTest() {
