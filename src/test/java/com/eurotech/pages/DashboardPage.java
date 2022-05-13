@@ -28,4 +28,10 @@ public class DashboardPage extends BasePage{
     @FindBy(xpath = "//span[text()='Logout']")
     public WebElement logOutButton;
 
+    @FindBy(xpath = "//*[contains(text(),'Edit Profile')]")
+    public WebElement editProfile;
+
+    @FindBy(xpath = "//td[contains(text(),'Microsoft ')]/../td[2]")
+    public WebElement usersTitle;
+
 }
