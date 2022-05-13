@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Eurotech Automation" verbose="1">
+<test name="Eurotech Smoke">
+    <packages>
+        <package name="com.eurotech.tests.day27_ExtentReports"></package>
+        <package name="com.eurotech.tests.day28_review"></package>
+    </packages>
+    <classes>
+        <class name="com.eurotech.tests.day22_WebTables.HoverTest"></class>
+        <class name="com.eurotech.tests.day20_synchronization_waits.ImplicitlyWaitExample">
+            <methods>
+                <include name="implicitlyWait"></include>
+            </methods>
+        </class>
+    </classes>
+</test>
+</suite>

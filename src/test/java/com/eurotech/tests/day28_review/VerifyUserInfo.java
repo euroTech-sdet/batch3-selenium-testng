@@ -55,7 +55,6 @@ public class VerifyUserInfo extends TestBase {
 
         extentLogger.info("Get username info");
         String actualName=profilePage.githubUsername.getAttribute("value");
-       // new ProfilePage().githubUsername.getText();
         String expectedName= "eurotech123";
 
         extentLogger.info("Verify that guthub username is "+expectedName);
