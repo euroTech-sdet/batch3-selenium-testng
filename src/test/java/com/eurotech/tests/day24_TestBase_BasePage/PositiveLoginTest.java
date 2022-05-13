@@ -4,6 +4,7 @@ import com.eurotech.pages.BasePage;
 import com.eurotech.pages.DashboardPage;
 import com.eurotech.pages.LoginPage;
 import com.eurotech.tests.TestBase;
+import com.eurotech.utilities.BrowserUtils;
 import com.eurotech.utilities.ConfigurationReader;
 import com.eurotech.utilities.Driver;
 import org.checkerframework.checker.units.qual.C;
@@ -50,7 +51,8 @@ public class PositiveLoginTest extends TestBase{
     @Test
     public void login() {
         LoginPage loginPage = new LoginPage();
-        loginPage.understandBtn.click();
+        BrowserUtils.clickWithJS(loginPage.understandBtn);
+       // loginPage.understandBtn.click();
         loginPage.loginBtnBasePage.click();
         loginPage.login(ConfigurationReader.get("usernameDeveloper"),ConfigurationReader.get("passwordDeveloper"));
         loginPage.loginBtnLoginPage.click();

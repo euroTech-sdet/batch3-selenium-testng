@@ -42,4 +42,5 @@ public abstract class BasePage {
         menu.click();
     }
 
+    
 }
