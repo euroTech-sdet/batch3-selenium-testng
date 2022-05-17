@@ -59,8 +59,6 @@ public class TestBase {
 
     }
 
-
-
     @BeforeMethod
     public void setUp() {
 
@@ -69,7 +67,7 @@ public class TestBase {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         actions = new Actions(driver);
         wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-     //   driver.get(ConfigurationReader.get("url"));
+        driver.get(ConfigurationReader.get("url"));
 
     }
 

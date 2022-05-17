@@ -27,7 +27,6 @@ public class StaleElement extends TestBase {
 
         emailInput.sendKeys("Eurotech Again");
 
-
     }
 
     @Test
