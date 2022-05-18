@@ -75,4 +75,6 @@ public class VerifyUserInfo extends TestBase {
         extentLogger.pass("Passed");
 
     }
+
+
 }

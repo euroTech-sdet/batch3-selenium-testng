@@ -1,5 +1,6 @@
 package com.eurotech.tests.day10;
 
+import com.eurotech.utilities.BrowserUtils;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -20,6 +21,8 @@ public class OpenBrowser {
         //Selenium bize google.com u ac.
         driver.get("https://google.com/");
         Thread.sleep(3000);
+
+
 
     }
 }

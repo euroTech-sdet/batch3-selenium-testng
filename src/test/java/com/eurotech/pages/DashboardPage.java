@@ -31,7 +31,7 @@ public class DashboardPage extends BasePage{
     @FindBy(xpath = "//*[contains(text(),'Edit Profile')]")
     public WebElement editProfile;
 
-    @FindBy(xpath = "//td[contains(text(),'Microsoft ')]/../td[2]")
+    @FindBy(xpath = "//td[contains(text(),'Microsoft')]/../td[2]")
     public WebElement usersTitle;
 
     public String getTitle(String companyName){
