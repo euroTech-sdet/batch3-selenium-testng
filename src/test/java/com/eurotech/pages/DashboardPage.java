@@ -1,5 +1,6 @@
 package com.eurotech.pages;
 
+import com.eurotech.utilities.BrowserUtils;
 import com.eurotech.utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -10,7 +11,7 @@ import java.util.List;
 
 public class DashboardPage extends BasePage{
 
-    @FindBy(xpath = "//p[text()=' Welcome ']")
+    @FindBy(xpath = "//p[text()=' Welcome']")
     public WebElement welcomeMessage;
 
     @FindBy(className = "nav__menu-item")
@@ -42,5 +43,10 @@ public class DashboardPage extends BasePage{
     public String getCompany(String usersTitle){
         String text = Driver.get().findElement(By.xpath("//td[contains(text(),'" + usersTitle + "')]/../td[1]")).getText();
         return text;
+    }
+    public void navigateMyAccountSubMenu(String menu){
+
+        BrowserUtils.hover(myAccountMenu);
+        Driver.get().findElement(By.xpath("//span[text()='"+menu+"']")).click();
     }
 }

@@ -26,12 +26,14 @@ public class ExcelUtilsDemo {
         System.out.println("testData.getColumnsNames() = " + testData.getColumnsNames());
 
         //get all data in list of maps
-
         List<Map<String, String>> dataList = testData.getDataList();
         for (Map<String, String> oneRow : dataList) {
             System.out.println("oneRow = " + oneRow);
 
         }
+        System.out.println("dataList.get(3) = " + dataList.get(3));
+
+
         //get Oyku's password
         System.out.println("dataList.get(3).get(\"Password\") = " + dataList.get(3).get("Password"));
 

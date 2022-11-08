@@ -10,6 +10,7 @@ import com.eurotech.utilities.Driver;
 import org.checkerframework.checker.units.qual.C;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -56,5 +57,38 @@ public class PositiveLoginTest extends TestBase{
         loginPage.loginBtnBasePage.click();
         loginPage.login(ConfigurationReader.get("usernameDeveloper"),ConfigurationReader.get("passwordDeveloper"));
         loginPage.loginBtnLoginPage.click();
+    }
+
+    @Test
+    public void loginWithStudent() {
+        LoginPage loginPage = new LoginPage();
+        DashboardPage dashboardPage= new DashboardPage();
+
+        loginPage.understandBtn.click();
+        loginPage.loginBtnBasePage.click();
+
+        String email= ConfigurationReader.get("usernameStudent");
+        String password= ConfigurationReader.get("passwordStudent");
+
+        loginPage.emailInput.sendKeys(email);
+        loginPage.passwordInput.sendKeys(password);
+        loginPage.loginBtnLoginPage.click();
+
+    }
+
+    @Test
+    public void window() {
+        driver.get("https://the-internet.herokuapp.com/windows");
+        driver.findElement(By.linkText("Click Here")).click();
+        BrowserUtils.switchToWindow("New Window");
+        System.out.println("driver.getTitle() = " + driver.getTitle());
+    }
+
+    @Test
+    public void hover() {
+        driver.get("https://the-internet.herokuapp.com/hovers");
+        WebElement img1 = driver.findElement(By.xpath("(//img)[2]"));
+        BrowserUtils.hover(img1);
+
     }
 }

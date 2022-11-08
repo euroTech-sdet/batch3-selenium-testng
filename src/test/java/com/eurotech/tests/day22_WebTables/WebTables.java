@@ -41,8 +41,10 @@ public class WebTables {
     @Test
     public void getAllHeaders() {
 
+        //How many columns we have
         //getAll Headers
         List<WebElement> allHeaders = driver.findElements(By.xpath("//table[@border='1']/thead/tr/th"));
+       // List<WebElement> allHeaders = driver.findElements(By.xpath("//table[@border='1']//th"));
         System.out.println("allHeaders.size() = " + allHeaders.size());
         for (WebElement header : allHeaders) {
             System.out.println("header.getText() = " + header.getText());
@@ -58,13 +60,15 @@ public class WebTables {
 
     @Test
     public void getRows() {
-        //get second row which is starting clock tower hotel
-        WebElement clockTower = driver.findElement(By.xpath("//table[@border='1']/tbody/tr[2]"));
-        System.out.println("clockTower.getText() = " + clockTower.getText());
+
 
         //get all rows
         List<WebElement> numRows = driver.findElements(By.xpath("//table[@border='1']/tbody/tr"));
         System.out.println("numRows.size() = " + numRows.size());
+
+        //get second row which is starting clock tower hotel
+        WebElement clockTower = driver.findElement(By.xpath("//table[@border='1']/tbody/tr[2]"));
+        System.out.println("clockTower.getText() = " + clockTower.getText());
 
         for (int i = 1; i <=numRows.size() ; i++) {
                WebElement row= driver.findElement(By.xpath("//table[@border='1']/tbody/tr["+i+"]"));
@@ -104,7 +108,9 @@ public class WebTables {
         for (int i = 1; i <=rowNumber ; i++) {
             //her bir column al
             for (int j = 1; j <=colNumber ; j++) {
+
                 String cellXpath = "//table[@border='1']/tbody/tr["+i+"]/td["+j+"]";
+                System.out.println("cellXpath = " + cellXpath);
                 WebElement cell = driver.findElement(By.xpath(cellXpath));
                 System.out.print(" "+cell.getText());
 

@@ -17,14 +17,13 @@ public class VerifyUserInfo extends TestBase {
     --Login as teacher
     --Verify that login is successful
     --Click on Edit Profile button
-    --Verify that Github name is eurotech123
+    --Verify that Github name is eurotech2022
     --Click on Go Back button
     --Verify that user's title is Test Automation Engineer
      */
 
     @Test
     public void userInfo() {
-
         DashboardPage dashboardPage = new DashboardPage();
         ProfilePage profilePage = new ProfilePage();
         extentLogger= report.createTest("User Info Verification");
@@ -32,7 +31,6 @@ public class VerifyUserInfo extends TestBase {
 
         extentLogger.info("Click understand button");
         loginPage.understandBtn.click();
-
         extentLogger.info("Click on login button");
         loginPage.loginBtnBasePage.click();
 

@@ -1,5 +1,6 @@
 package com.eurotech.tests.day19_multipleWindows_frames;
 
+import com.eurotech.utilities.BrowserUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
@@ -75,20 +76,23 @@ public class multipleWindows {
         //driver.findElement(By.xpath("//a[text()='Click Here']")).click();
         driver.findElement(By.linkText("Click Here")).click();
 
-        Set<String> windowHandles = driver.getWindowHandles();
+        BrowserUtils.switchToWindow("New Window");
+        System.out.println(driver.getTitle()+"TESSSSSSTTTTT");
 
-        for (String tab : windowHandles) {
-
-            driver.switchTo().window(tab);
-
-            if(driver.getTitle().equals("New Window")) {
-                break;
-            }
-
-        }
-        System.out.println("Title After New Window = " + driver.getTitle());
-        System.out.println("Id of Second Tab = " + driver.getWindowHandle());
-
+//        Set<String> windowHandles = driver.getWindowHandles();
+//
+//        for (String tab : windowHandles) {
+//
+//            driver.switchTo().window(tab);
+//
+//            if(driver.getTitle().equals("New Window")) {
+//                break;
+//            }
+//
+//        }
+//        System.out.println("Title After New Window = " + driver.getTitle());
+//        System.out.println("Id of Second Tab = " + driver.getWindowHandle());
+//
     }
 
     @AfterMethod

@@ -91,6 +91,17 @@ public class frames_iframes {
 
     }
 
+    @Test
+    public void testHW() throws InterruptedException {
+
+        driver.get("https://demoqa.com/select-menu");
+        driver.findElement(By.xpath("(//div[@class=' css-1hwfws3'])[3]")).click();
+
+        Thread.sleep(1000);
+
+        driver.findElement(By.xpath("//div[text()='Black']")).click();
+    }
+
     @AfterMethod
     public void tearDown() throws InterruptedException {
 

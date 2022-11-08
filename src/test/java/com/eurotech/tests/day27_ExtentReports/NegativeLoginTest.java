@@ -19,17 +19,19 @@ public class NegativeLoginTest extends TestBase {
         loginPage.understandBtn.click();
         loginPage.loginBtnBasePage.click();
 
-        loginPage.emailInput.sendKeys("eurotech@gmail");
         extentLogger.info("Enter wrong username");
+        loginPage.emailInput.sendKeys("eurotech@gmail");
 
-        loginPage.passwordInput.sendKeys(ConfigurationReader.get("passwordTeacher"));
         extentLogger.info("Enter Teacher Password");
+        loginPage.passwordInput.sendKeys(ConfigurationReader.get("passwordTeacher"));
+
+        extentLogger.info("Click Login Button");
         loginPage.loginBtnLoginPage.click();
 
-        String expectedText="Welcome Eurotech"; //test case e baslamadan once bize credentials olarak bize verilecek
+        String expectedUrl ="";
         String actualText= dashboardPage.welcomeMessage.getText();
 
-        Assert.assertEquals(actualText,expectedText);
+        Assert.assertEquals(actualText,expectedUrl);
         System.out.println("dashboardPage.welcomeMessage.getText() = " + dashboardPage.welcomeMessage.getText());
 
     }

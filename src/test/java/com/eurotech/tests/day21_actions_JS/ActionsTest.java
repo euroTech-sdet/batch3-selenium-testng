@@ -32,10 +32,11 @@ public class ActionsTest {
         Thread.sleep(2000);
         WebElement img1 = driver.findElement(By.xpath("(//img)[2]"));
 
-        Actions actions = new Actions(driver);
-        actions.moveToElement(img1).perform();
+       // Actions actions = new Actions(driver);
+       // actions.moveToElement(img1).perform();
 
         WebElement view_profile = driver.findElement(By.linkText("View profile"));
+        System.out.println("view_profile.getText() = " + view_profile.getText());
         Assert.assertTrue(view_profile.isDisplayed());
 
     }
@@ -69,20 +70,6 @@ public class ActionsTest {
         Actions actions = new Actions(driver);
 
         actions.moveToElement(source).clickAndHold().moveToElement(target).pause(4000).release().perform();
-    }
-
-    @Test
-    public void test() {
-
-        driver.findElement(By.xpath("jfhdj")).sendKeys("dencrypt.");
-        //Ankara123 --> sgdsghdfasghdr635463254762354
-        //selam -->  fdjgfhjdsgfjhdsgjdhgkdjshgkjdshgjkshgkjshgk
-        // Ankara123 encrypt (SecretKey"ERHAN") --> 345264yuayudiwyiuda
-        //Ankara123 encrypt (SecretKey"MACBOOK") --> mkfghjfghjf7874837483
-
-        //encrypt(password, secret key) --> 74364jfhjdfhkdjsjhfkjs
-
-        //
     }
 
     @AfterMethod

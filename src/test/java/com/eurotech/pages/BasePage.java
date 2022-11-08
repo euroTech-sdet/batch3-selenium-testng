@@ -1,8 +1,10 @@
 package com.eurotech.pages;
 
+import com.eurotech.utilities.BrowserUtils;
 import com.eurotech.utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
@@ -34,13 +36,14 @@ public abstract class BasePage {
     public WebElement understandBtn;
 
 
-    @Test
     public void navigateToMenu(String menuName) {
 
         WebElement menu =   Driver.get().findElement(By.xpath("//a[text()='" + menuName + "']"));
 
         menu.click();
     }
+
+
 
     
 }

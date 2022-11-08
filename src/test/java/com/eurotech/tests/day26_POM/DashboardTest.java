@@ -25,7 +25,6 @@ public class DashboardTest extends TestBase {
 
         LoginPage loginPage = new LoginPage();
         DashboardPage dashboardPage = new DashboardPage();
-
         Thread.sleep(1000);
         loginPage.understandBtn.click();
         //Thread.sleep(1000);
@@ -34,12 +33,9 @@ public class DashboardTest extends TestBase {
 //        loginPage.emailInput.sendKeys(ConfigurationReader.get("usernameTeacher"));
 //        loginPage.passwordInput.sendKeys("passwordTeacher");
 //        loginPage.loginBtnLoginPage.click();
-
         loginPage.loginTeacher();
         Thread.sleep(2000);
-
         //List<WebElement> dashboardMenuList = dashboardPage.dashboardMenus;
-
         for (WebElement menuName : dashboardPage.dashboardMenus) {
             System.out.println("menuName.getText() = " + menuName.getText());
         }
@@ -57,29 +53,37 @@ public class DashboardTest extends TestBase {
 
         LoginPage loginPage = new LoginPage();
         DashboardPage dashboardPage = new DashboardPage();
-
         loginPage.understandBtn.click();
         //Thread.sleep(1000);
         loginPage.loginBtnBasePage.click();
-
         loginPage.loginTeacher();
-
 //        dashboardPage.allPostsMenu.click();
 //        Thread.sleep(1000);
          dashboardPage.navigateToMenu("All Posts");
         System.out.println("driver.getCurrentUrl() = " + driver.getCurrentUrl());
-
 //        dashboardPage.developersMenu.click();
         dashboardPage.navigateToMenu("Developers");
         System.out.println("driver.getCurrentUrl() = " + driver.getCurrentUrl());
-
         actions.moveToElement(dashboardPage.myAccountMenu).perform();
         //dashboardPage.myAccountMenu.click();
-
         dashboardPage.logOutButton.click();
-
         System.out.println("After logging out = " + driver.getCurrentUrl());
 
+
+    }
+
+    @Test
+    public void testList() {
+        driver.get(ConfigurationReader.get("url"));
+        LoginPage loginPage = new LoginPage();
+        DashboardPage dashboardPage = new DashboardPage();
+        loginPage.understandBtn.click();
+        //Thread.sleep(1000);
+        loginPage.loginBtnBasePage.click();
+        loginPage.loginTeacher();
+        for (WebElement menuName : dashboardPage.dashboardMenus) {
+            System.out.println("menuName.getText() = " + menuName.getText());
+        }
 
     }
 }

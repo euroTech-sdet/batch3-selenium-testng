@@ -26,9 +26,11 @@ public class JavaScriptExecutorDemo {
     public void clickWithJS() {
 
         driver.get("https://www.amazon.co.uk/");
+        driver.findElement(By.cssSelector("#sp-cc-accept")).click();
         WebElement linkTurkey = driver.findElement(By.linkText("Turkey"));
 
-       // linkTurkey.click();
+
+     //   linkTurkey.click();
         JavascriptExecutor executor = (JavascriptExecutor)driver;
         executor.executeScript("arguments[0].click();", linkTurkey); //click yapiyor
 

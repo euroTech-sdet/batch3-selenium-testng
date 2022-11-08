@@ -40,6 +40,7 @@ public class LoginPage extends BasePage {
     public void login(String username,String password){
         emailInput.sendKeys(username);
         passwordInput.sendKeys(password);
+        loginBtnBasePage.click();
     }
 
 

@@ -11,6 +11,7 @@ import org.testng.annotations.Test;
 import com.eurotech.utilities.WebDriverFactory;
 
 import java.time.Duration;
+import java.util.List;
 
 public class HoverTest {
 
@@ -49,6 +50,35 @@ public class HoverTest {
             System.out.println(textPath);
             Assert.assertTrue(text.isDisplayed(),"verify user "+(i-1)+" is displayed");
         }
+    }
+
+    @Test
+    public void tables() {
+        driver.get("https://demoqa.com/webtables");
+        WebElement beforeUpdates = driver.findElement(By.xpath("//div[@class='rt-tbody']/div[3]/div/div[1]"));
+        System.out.println("beforeUpdates.getText() = " + beforeUpdates.getText());
+        WebElement lastNameColumn = driver.findElement(By.xpath("//div[text()='Last Name']"));
+     //   lastNameColumn.click();
+
+        System.out.println("beforeUpdates.2 = " + beforeUpdates.getText());
+
+        WebElement afterUpdates = driver.findElement(By.xpath("//div[@class='rt-tbody']//div[.='Kierra']"));
+        System.out.println("afterUpdates.getText() = " + afterUpdates.getText());
+
+        //how we gonna use this dynamic code
+        //print Cierra infos
+        lastNameColumn.click();
+
+        List<WebElement> infoCierra = driver.findElements(By.xpath("//div[@class='rt-tbody']/div[1]/div/div"));
+        for (WebElement element : infoCierra) {
+            System.out.println("cierra  = " + element.getText());
+        }
+
+        List<WebElement> cierraDynamic = driver.findElements(By.xpath("//div[text()='Cierra']/../div"));
+        for (WebElement element : cierraDynamic) {
+            System.out.println("dynamic = " + element.getText());
+        }
+
     }
 
     @AfterMethod
